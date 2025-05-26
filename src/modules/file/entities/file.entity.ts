@@ -11,7 +11,7 @@ export class File {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true, default: null, type: 'uuid' })
+  @Column({ nullable: true, default: null })
   userId: string;
 
   @Column()

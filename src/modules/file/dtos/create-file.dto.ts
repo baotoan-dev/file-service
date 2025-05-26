@@ -1,7 +1,9 @@
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+
 export class CreateFileDto {
-  userId?: string; // ID của người dùng sở hữu file, nếu có
-  filename: string;
-  path: string;
-  mimetype?: string;
-  size?: number;
+  @ApiProperty({ type: String, format: 'binary' })
+  file: Express.Multer.File;
+
+  @ApiPropertyOptional({ type: String, description: 'Id của người dùng' })
+  userId: string;
 }
