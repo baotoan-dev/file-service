@@ -20,4 +20,16 @@ export class FileService {
   create(data: CreateFileDto): Promise<File> {
     return this.fileRepo.save(data);
   }
+
+  delete(id: number): Promise<void> {
+    return this.fileRepo.delete(id).then(() => undefined);
+  }
+
+  findAll(): Promise<File[]> {
+    return this.fileRepo.find();
+  }
+
+  findOne(id: number): Promise<File> {
+    return this.fileRepo.findOneBy({ id });
+  }
 }
